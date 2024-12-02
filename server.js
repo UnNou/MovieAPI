@@ -5,6 +5,11 @@ const app = express();
 // middleware to parse JSON in POST requests?
 app.use(express.json());
 
+// start the server
+app.listen(3001, () => {
+    console.log('Server running on http://localhost:3001');
+});
+
 // raw endpoints
 
 // GET / test endpoint
@@ -36,6 +41,8 @@ app.get('/customers', (req, res) => {
         { id: 1, first_name: 'Unnq', last_name: 'Nousiainen', username: 'Noun' },
         { id: 2, first_name: 'Matti', last_name: 'Matikainen', username: 'Matikka' },
         { id: 3, first_name: 'Jackie', last_name: 'Chan', username: 'Chan' }
+
+        
     ]);
 });
 
@@ -60,9 +67,4 @@ app.get('/customer_favorites', (req, res) => {
 // catch-all for unknown endpoints
 app.use((req, res) => {
     res.status(404).send('Endpoint not found');
-});
-
-// start the server
-app.listen(3001, () => {
-    console.log('Server running on http://localhost:3001');
 });
