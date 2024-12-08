@@ -1,4 +1,6 @@
 import express from 'express';
+import { client } from './pgserver';
+
 
 const app = express();
 
@@ -13,7 +15,10 @@ app.listen(3001, () => {
 // raw endpoints
 
 // GET / test endpoint
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
+
+    await client.query
+
     res.status(200).send('Welcome to the Movie API!');
 });
 
