@@ -1,10 +1,13 @@
 import express from 'express';
 import { client } from './pgserver';
 
+
 const app = express();
+
+// middleware to parse JSON in POST requests?
 app.use(express.json());
 
-// Start the server
+// start the server
 app.listen(3001, () => {
     console.log('Server running on http://localhost:3001');
 });
