@@ -1,0 +1,61 @@
+{
+  "genre_id": 1,
+  "genre_name": "Action"
+}
+
+{
+    "movie_id": 1,
+    "movie_name": "The Matrix",
+    "year": 1999,
+    "genre_id": 2
+  }
+
+  [
+    {
+      "movie_id": 1,
+      "movie_name": "The Matrix",
+      "year": 1999,
+      "genre_id": 2
+    },
+    {
+      "movie_id": 2,
+      "movie_name": "The Godfather",
+      "year": 1972,
+      "genre_id": 1
+    }
+  ]
+
+  {
+    "movie_id": 1,
+    "movie_name": "The Matrix",
+    "year": 1999,
+    "genre_id": 2
+  }
+  
+  {
+    "message": "Movie deleted",
+    "movie": {
+      "movie_id": 1,
+      "movie_name": "The Matrix",
+      "year": 1999,
+      "genre_id": 2
+    }
+  }
+  
+  {
+    "customer_id": 1,
+    "first_name": "Unnq",
+    "last_name": "Nousiainen",
+    "username": "Noun",
+    "year_of_birth": 1887
+  }
+  
+  [
+    {
+      "movie_id": 1,
+      "movie_name": "The Matrix",
+      "year": 1999,
+      "genre_id": 2
+    }
+  ]
+  
