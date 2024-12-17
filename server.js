@@ -12,14 +12,14 @@ app.listen(3001, () => {
     console.log('Server running on http://localhost:3001');
 });
 
-// -------------------- ENDPOINTS --------------------
+// --------------- ENDPOINTS ----------------
 
-// GET / - Test endpoint
+// GET / - test endpoint
 app.get('/', async (req, res) => {
     res.status(200).send('Welcome to the Movie API!');
 });
 
-// POST /genres - Add a new genre
+// POST /genres - add a new genre
 app.post('/genres', async (req, res) => {
     const { genre_name } = req.body;
     try {
@@ -34,7 +34,7 @@ app.post('/genres', async (req, res) => {
     }
 });
 
-// POST /movies - Add a new movie
+// POST /movies - add a new movie
 app.post('/movies', async (req, res) => {
     const { movie_name, year, genre_id } = req.body;
     try {
@@ -49,7 +49,7 @@ app.post('/movies', async (req, res) => {
     }
 });
 
-// GET /movies - Get all movies (paginated)
+// GET /movies - get all movies (paginated)
 app.get('/movies', async (req, res) => {
     const { page = 1, size = 10 } = req.query; // Defaults: page 1, 10 per page
     const offset = (page - 1) * size;
@@ -65,7 +65,7 @@ app.get('/movies', async (req, res) => {
     }
 });
 
-// GET /movies/:id - Get movie by ID
+// GET /movies/:id - get movie by ID
 app.get('/movies/:id', async (req, res) => {
     const { id } = req.params;
     try {
@@ -83,7 +83,7 @@ app.get('/movies/:id', async (req, res) => {
     }
 });
 
-// DELETE /movies/:id - Remove movie by ID
+// DELETE /movies/:id - remove movie by ID
 app.delete('/movies/:id', async (req, res) => {
     const { id } = req.params;
     try {
@@ -101,7 +101,7 @@ app.delete('/movies/:id', async (req, res) => {
     }
 });
 
-// POST /customers - Register new user
+// POST /customers - register new user
 app.post('/customers', async (req, res) => {
     const { first_name, last_name, username, password_hash, year_of_birth } = req.body;
     try {
@@ -117,7 +117,7 @@ app.post('/customers', async (req, res) => {
     }
 });
 
-// GET /movies/search - Get movies by keyword
+// GET /movies/search - get movies by keyword
 app.get('/movies/search', async (req, res) => {
     const { keyword } = req.query;
     try {
@@ -132,7 +132,7 @@ app.get('/movies/search', async (req, res) => {
     }
 });
 
-// POST /reviews - Add a review for a movie
+// POST /reviews - add a review for a movie
 app.post('/reviews', async (req, res) => {
     const { movie_id, customer_id, stars, review_text } = req.body;
     try {
@@ -148,7 +148,7 @@ app.post('/reviews', async (req, res) => {
     }
 });
 
-// POST /favorites - Add a favorite movie for a user
+// POST /favorites - add a favorite movie for a user
 app.post('/favorites', async (req, res) => {
     const { customer_id, movie_id } = req.body;
     try {
@@ -164,7 +164,7 @@ app.post('/favorites', async (req, res) => {
     }
 });
 
-// GET /favorites/:username - Get favorite movies by username
+// GET /favorites/:username - get favorite movies by username
 app.get('/favorites/:username', async (req, res) => {
     const { username } = req.params;
     try {
@@ -183,7 +183,7 @@ app.get('/favorites/:username', async (req, res) => {
     }
 });
 
-// Catch-all for unknown endpoints
+// catch-all for unknown endpoints
 app.use((req, res) => {
     res.status(404).send('Endpoint not found');
 });
